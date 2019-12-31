@@ -1,0 +1,61 @@
+{% extends "admin/base.html" %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <a href="{% url 'admin:index' %}">Home</a>
+        {% block crumbs %}
+           &rsaquo; Connected Clients
+        {% endblock %}
+    </div>
+{% endblock %}
+{% block content_title %}
+
+{% endblock content_title %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ {% block content %}
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">INTERFACE</th>
+      <th scope="col">MAC ADDRESS</th>
+      <th scope="col">IP ADDRESS</th>
+      <th scope="col">AGE</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for arp in arp_table %}
+  <tr>
+      <td>{{arp.interface}}</td>
+      <td>{{arp.mac}}</td>
+      <td>{{arp.ip}}</td>
+      <td>{{arp.age}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock content %} 

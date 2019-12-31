@@ -1,0 +1,40 @@
+{% extends 'adminlte/base.html' %}
+{% block title %}My App{% endblock %}
+{% block content %}
+<h3>Device List</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+    <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">IP</th>
+      <th scope="col">Vendor</th>
+      <th scope="col">Model</th>
+      <th scope="col">Serial</th>
+      <th scope="col">Host Name</th>
+      <th scope="col">Location</th>
+ 
+      
+    </tr>
+  </thead>
+  <tbody>
+  {% for dev in  devices %}
+  
+   <tr>
+      <th scope="row">1</th>
+      <td>{{dev.name}}</td>
+      <td>{{dev.static_ip}}</td>
+      <td>{{dev.vendor}}</td>
+      <td>{{dev.model}}</td>
+      <td>{{dev.serial_number}}</td>
+      <td>{{dev.hostname}}</td>
+      <td>{{dev.location}}</td>
+     
+    </tr>
+
+
+
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}
